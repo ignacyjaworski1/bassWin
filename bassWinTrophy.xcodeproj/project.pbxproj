@@ -1,0 +1,656 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		654A90A6C9DD4FEE0A4D2C9D /* Pods_bassWinTrophy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C809AD37BADFE4A6EB75591C /* Pods_bassWinTrophy.framework */; };
+		8491637E2C57ACEC008466A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491637D2C57ACEC008466A8 /* AppDelegate.swift */; };
+		849163802C57ACEC008466A8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491637F2C57ACEC008466A8 /* SceneDelegate.swift */; };
+		849163822C57ACEC008466A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849163812C57ACEC008466A8 /* ViewController.swift */; };
+		849163852C57ACEC008466A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849163832C57ACEC008466A8 /* Main.storyboard */; };
+		849163872C57ACEE008466A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849163862C57ACEE008466A8 /* Assets.xcassets */; };
+		8491638A2C57ACEE008466A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849163882C57ACEE008466A8 /* LaunchScreen.storyboard */; };
+		8491639C2C57AD5C008466A8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491639B2C57AD5C008466A8 /* MainView.swift */; };
+		8491639E2C57AD66008466A8 /* LottieEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491639D2C57AD66008466A8 /* LottieEmptyStateView.swift */; };
+		849163A02C57AD6D008466A8 /* SharingImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491639F2C57AD6D008466A8 /* SharingImage.swift */; };
+		849163A22C57AD74008466A8 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849163A12C57AD74008466A8 /* BackgroundView.swift */; };
+		849163A42C57AD7F008466A8 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849163A32C57AD7F008466A8 /* BottomSheetView.swift */; };
+		849163A62C57AD87008466A8 /* NewTierCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849163A52C57AD87008466A8 /* NewTierCell.swift */; };
+		849163A82C57AD99008466A8 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849163A72C57AD99008466A8 /* ListView.swift */; };
+		849163AA2C57ADAA008466A8 /* GradeCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849163A92C57ADAA008466A8 /* GradeCellView.swift */; };
+		849163AC2C57ADBB008466A8 /* GradeMakerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849163AB2C57ADBB008466A8 /* GradeMakerViewModel.swift */; };
+		849163AE2C57ADCB008466A8 /* GradeMakerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849163AD2C57ADCB008466A8 /* GradeMakerView.swift */; };
+		849163B02C57ADD3008466A8 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849163AF2C57ADD3008466A8 /* StorageManager.swift */; };
+		849163B22C57ADDB008466A8 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849163B12C57ADDB008466A8 /* Color.swift */; };
+		849163B42C57ADE3008466A8 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849163B32C57ADE3008466A8 /* View.swift */; };
+		849163B62C57ADEC008466A8 /* TabMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849163B52C57ADEC008466A8 /* TabMainView.swift */; };
+		849163B82C57ADF6008466A8 /* TrophyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849163B72C57ADF6008466A8 /* TrophyView.swift */; };
+		849163BA2C57ADFD008466A8 /* ZoomableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849163B92C57ADFD008466A8 /* ZoomableView.swift */; };
+		849163BC2C57AE04008466A8 /* TrophyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849163BB2C57AE04008466A8 /* TrophyDetailView.swift */; };
+		849163BE2C57AE0C008466A8 /* NewTrophyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849163BD2C57AE0C008466A8 /* NewTrophyView.swift */; };
+		849163C02C57AE13008466A8 /* TrophyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849163BF2C57AE13008466A8 /* TrophyCell.swift */; };
+		849163C22C57AE1B008466A8 /* Trophy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849163C12C57AE1B008466A8 /* Trophy.swift */; };
+		849163C42C57AE22008466A8 /* FisherGradeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849163C32C57AE22008466A8 /* FisherGradeList.swift */; };
+		849163C62C57AE2A008466A8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849163C52C57AE2A008466A8 /* SettingsView.swift */; };
+		849163C92C57AFD1008466A8 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 849163C82C57AFD1008466A8 /* PrivacyInfo.xcprivacy */; };
+		849163CB2C57B126008466A8 /* bubbles.json in Resources */ = {isa = PBXBuildFile; fileRef = 849163CA2C57B126008466A8 /* bubbles.json */; };
+		849163CD2C57B12B008466A8 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 849163CC2C57B12B008466A8 /* loading.json */; };
+		849163CF2C57B132008466A8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 849163CE2C57B132008466A8 /* GoogleService-Info.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8491637A2C57ACEB008466A8 /* bassWinTrophy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bassWinTrophy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8491637D2C57ACEC008466A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8491637F2C57ACEC008466A8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		849163812C57ACEC008466A8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		849163842C57ACEC008466A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		849163862C57ACEE008466A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		849163892C57ACEE008466A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8491638B2C57ACEE008466A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8491639B2C57AD5C008466A8 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		8491639D2C57AD66008466A8 /* LottieEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieEmptyStateView.swift; sourceTree = "<group>"; };
+		8491639F2C57AD6D008466A8 /* SharingImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingImage.swift; sourceTree = "<group>"; };
+		849163A12C57AD74008466A8 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		849163A32C57AD7F008466A8 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
+		849163A52C57AD87008466A8 /* NewTierCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTierCell.swift; sourceTree = "<group>"; };
+		849163A72C57AD99008466A8 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		849163A92C57ADAA008466A8 /* GradeCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeCellView.swift; sourceTree = "<group>"; };
+		849163AB2C57ADBB008466A8 /* GradeMakerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeMakerViewModel.swift; sourceTree = "<group>"; };
+		849163AD2C57ADCB008466A8 /* GradeMakerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeMakerView.swift; sourceTree = "<group>"; };
+		849163AF2C57ADD3008466A8 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		849163B12C57ADDB008466A8 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		849163B32C57ADE3008466A8 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		849163B52C57ADEC008466A8 /* TabMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabMainView.swift; sourceTree = "<group>"; };
+		849163B72C57ADF6008466A8 /* TrophyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrophyView.swift; sourceTree = "<group>"; };
+		849163B92C57ADFD008466A8 /* ZoomableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomableView.swift; sourceTree = "<group>"; };
+		849163BB2C57AE04008466A8 /* TrophyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrophyDetailView.swift; sourceTree = "<group>"; };
+		849163BD2C57AE0C008466A8 /* NewTrophyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTrophyView.swift; sourceTree = "<group>"; };
+		849163BF2C57AE13008466A8 /* TrophyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrophyCell.swift; sourceTree = "<group>"; };
+		849163C12C57AE1B008466A8 /* Trophy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trophy.swift; sourceTree = "<group>"; };
+		849163C32C57AE22008466A8 /* FisherGradeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FisherGradeList.swift; sourceTree = "<group>"; };
+		849163C52C57AE2A008466A8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		849163C72C57AFBF008466A8 /* bassWinTrophy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = bassWinTrophy.entitlements; sourceTree = "<group>"; };
+		849163C82C57AFD1008466A8 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		849163CA2C57B126008466A8 /* bubbles.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bubbles.json; sourceTree = "<group>"; };
+		849163CC2C57B12B008466A8 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
+		849163CE2C57B132008466A8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		89B72AEB680A384C0F5A7A93 /* Pods-bassWinTrophy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bassWinTrophy.debug.xcconfig"; path = "Target Support Files/Pods-bassWinTrophy/Pods-bassWinTrophy.debug.xcconfig"; sourceTree = "<group>"; };
+		C809AD37BADFE4A6EB75591C /* Pods_bassWinTrophy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bassWinTrophy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBF583B151CECE934F4DAD36 /* Pods-bassWinTrophy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bassWinTrophy.release.xcconfig"; path = "Target Support Files/Pods-bassWinTrophy/Pods-bassWinTrophy.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		849163772C57ACEB008466A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				654A90A6C9DD4FEE0A4D2C9D /* Pods_bassWinTrophy.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		054E8225519370E31C6A9C1B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				89B72AEB680A384C0F5A7A93 /* Pods-bassWinTrophy.debug.xcconfig */,
+				CBF583B151CECE934F4DAD36 /* Pods-bassWinTrophy.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		849163712C57ACEB008466A8 = {
+			isa = PBXGroup;
+			children = (
+				849163CE2C57B132008466A8 /* GoogleService-Info.plist */,
+				849163C82C57AFD1008466A8 /* PrivacyInfo.xcprivacy */,
+				849163CC2C57B12B008466A8 /* loading.json */,
+				849163CA2C57B126008466A8 /* bubbles.json */,
+				8491637C2C57ACEB008466A8 /* bassWinTrophy */,
+				8491637B2C57ACEB008466A8 /* Products */,
+				054E8225519370E31C6A9C1B /* Pods */,
+				9AEFC294417B5DD57C3CE15B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8491637B2C57ACEB008466A8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8491637A2C57ACEB008466A8 /* bassWinTrophy.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8491637C2C57ACEB008466A8 /* bassWinTrophy */ = {
+			isa = PBXGroup;
+			children = (
+				849163C72C57AFBF008466A8 /* bassWinTrophy.entitlements */,
+				8491639A2C57AD50008466A8 /* Settings */,
+				849163992C57AD4B008466A8 /* Model */,
+				849163982C57AD44008466A8 /* Trophy */,
+				849163972C57AD3F008466A8 /* Tab */,
+				849163962C57AD38008466A8 /* Extensions */,
+				849163952C57AD32008466A8 /* Service */,
+				849163942C57AD2B008466A8 /* GradeList */,
+				849163932C57AD23008466A8 /* Components */,
+				849163922C57AD0E008466A8 /* Main */,
+				849163912C57AD08008466A8 /* APP */,
+				849163832C57ACEC008466A8 /* Main.storyboard */,
+				849163862C57ACEE008466A8 /* Assets.xcassets */,
+				849163882C57ACEE008466A8 /* LaunchScreen.storyboard */,
+				8491638B2C57ACEE008466A8 /* Info.plist */,
+			);
+			path = bassWinTrophy;
+			sourceTree = "<group>";
+		};
+		849163912C57AD08008466A8 /* APP */ = {
+			isa = PBXGroup;
+			children = (
+				8491637D2C57ACEC008466A8 /* AppDelegate.swift */,
+				8491637F2C57ACEC008466A8 /* SceneDelegate.swift */,
+				849163812C57ACEC008466A8 /* ViewController.swift */,
+			);
+			path = APP;
+			sourceTree = "<group>";
+		};
+		849163922C57AD0E008466A8 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				8491639B2C57AD5C008466A8 /* MainView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		849163932C57AD23008466A8 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				8491639D2C57AD66008466A8 /* LottieEmptyStateView.swift */,
+				8491639F2C57AD6D008466A8 /* SharingImage.swift */,
+				849163A12C57AD74008466A8 /* BackgroundView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		849163942C57AD2B008466A8 /* GradeList */ = {
+			isa = PBXGroup;
+			children = (
+				849163A32C57AD7F008466A8 /* BottomSheetView.swift */,
+				849163A52C57AD87008466A8 /* NewTierCell.swift */,
+				849163A72C57AD99008466A8 /* ListView.swift */,
+				849163A92C57ADAA008466A8 /* GradeCellView.swift */,
+				849163AB2C57ADBB008466A8 /* GradeMakerViewModel.swift */,
+				849163AD2C57ADCB008466A8 /* GradeMakerView.swift */,
+			);
+			path = GradeList;
+			sourceTree = "<group>";
+		};
+		849163952C57AD32008466A8 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				849163AF2C57ADD3008466A8 /* StorageManager.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		849163962C57AD38008466A8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				849163B12C57ADDB008466A8 /* Color.swift */,
+				849163B32C57ADE3008466A8 /* View.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		849163972C57AD3F008466A8 /* Tab */ = {
+			isa = PBXGroup;
+			children = (
+				849163B52C57ADEC008466A8 /* TabMainView.swift */,
+			);
+			path = Tab;
+			sourceTree = "<group>";
+		};
+		849163982C57AD44008466A8 /* Trophy */ = {
+			isa = PBXGroup;
+			children = (
+				849163B72C57ADF6008466A8 /* TrophyView.swift */,
+				849163B92C57ADFD008466A8 /* ZoomableView.swift */,
+				849163BB2C57AE04008466A8 /* TrophyDetailView.swift */,
+				849163BD2C57AE0C008466A8 /* NewTrophyView.swift */,
+				849163BF2C57AE13008466A8 /* TrophyCell.swift */,
+			);
+			path = Trophy;
+			sourceTree = "<group>";
+		};
+		849163992C57AD4B008466A8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				849163C12C57AE1B008466A8 /* Trophy.swift */,
+				849163C32C57AE22008466A8 /* FisherGradeList.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8491639A2C57AD50008466A8 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				849163C52C57AE2A008466A8 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		9AEFC294417B5DD57C3CE15B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C809AD37BADFE4A6EB75591C /* Pods_bassWinTrophy.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		849163792C57ACEB008466A8 /* bassWinTrophy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8491638E2C57ACEE008466A8 /* Build configuration list for PBXNativeTarget "bassWinTrophy" */;
+			buildPhases = (
+				05A3785FEE8E70BFCAC4212A /* [CP] Check Pods Manifest.lock */,
+				849163762C57ACEB008466A8 /* Sources */,
+				849163772C57ACEB008466A8 /* Frameworks */,
+				849163782C57ACEB008466A8 /* Resources */,
+				386958D8FAB6085AC5A83C5C /* [CP] Embed Pods Frameworks */,
+				0EAB5B1CEE673CC454A983F5 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = bassWinTrophy;
+			productName = bassWinTrophy;
+			productReference = 8491637A2C57ACEB008466A8 /* bassWinTrophy.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		849163722C57ACEB008466A8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					849163792C57ACEB008466A8 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+				};
+			};
+			buildConfigurationList = 849163752C57ACEB008466A8 /* Build configuration list for PBXProject "bassWinTrophy" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 849163712C57ACEB008466A8;
+			productRefGroup = 8491637B2C57ACEB008466A8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				849163792C57ACEB008466A8 /* bassWinTrophy */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		849163782C57ACEB008466A8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8491638A2C57ACEE008466A8 /* LaunchScreen.storyboard in Resources */,
+				849163872C57ACEE008466A8 /* Assets.xcassets in Resources */,
+				849163CD2C57B12B008466A8 /* loading.json in Resources */,
+				849163C92C57AFD1008466A8 /* PrivacyInfo.xcprivacy in Resources */,
+				849163CB2C57B126008466A8 /* bubbles.json in Resources */,
+				849163852C57ACEC008466A8 /* Main.storyboard in Resources */,
+				849163CF2C57B132008466A8 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		05A3785FEE8E70BFCAC4212A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-bassWinTrophy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0EAB5B1CEE673CC454A983F5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-bassWinTrophy/Pods-bassWinTrophy-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-bassWinTrophy/Pods-bassWinTrophy-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-bassWinTrophy/Pods-bassWinTrophy-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		386958D8FAB6085AC5A83C5C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-bassWinTrophy/Pods-bassWinTrophy-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-bassWinTrophy/Pods-bassWinTrophy-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-bassWinTrophy/Pods-bassWinTrophy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		849163762C57ACEB008466A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				849163B62C57ADEC008466A8 /* TabMainView.swift in Sources */,
+				849163B42C57ADE3008466A8 /* View.swift in Sources */,
+				849163822C57ACEC008466A8 /* ViewController.swift in Sources */,
+				849163A42C57AD7F008466A8 /* BottomSheetView.swift in Sources */,
+				849163AE2C57ADCB008466A8 /* GradeMakerView.swift in Sources */,
+				849163BA2C57ADFD008466A8 /* ZoomableView.swift in Sources */,
+				849163B02C57ADD3008466A8 /* StorageManager.swift in Sources */,
+				849163A82C57AD99008466A8 /* ListView.swift in Sources */,
+				849163C42C57AE22008466A8 /* FisherGradeList.swift in Sources */,
+				849163AC2C57ADBB008466A8 /* GradeMakerViewModel.swift in Sources */,
+				8491639E2C57AD66008466A8 /* LottieEmptyStateView.swift in Sources */,
+				8491639C2C57AD5C008466A8 /* MainView.swift in Sources */,
+				849163C02C57AE13008466A8 /* TrophyCell.swift in Sources */,
+				849163B22C57ADDB008466A8 /* Color.swift in Sources */,
+				849163A22C57AD74008466A8 /* BackgroundView.swift in Sources */,
+				849163C62C57AE2A008466A8 /* SettingsView.swift in Sources */,
+				849163B82C57ADF6008466A8 /* TrophyView.swift in Sources */,
+				8491637E2C57ACEC008466A8 /* AppDelegate.swift in Sources */,
+				849163A62C57AD87008466A8 /* NewTierCell.swift in Sources */,
+				849163BE2C57AE0C008466A8 /* NewTrophyView.swift in Sources */,
+				849163AA2C57ADAA008466A8 /* GradeCellView.swift in Sources */,
+				849163BC2C57AE04008466A8 /* TrophyDetailView.swift in Sources */,
+				849163C22C57AE1B008466A8 /* Trophy.swift in Sources */,
+				849163A02C57AD6D008466A8 /* SharingImage.swift in Sources */,
+				849163802C57ACEC008466A8 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		849163832C57ACEC008466A8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				849163842C57ACEC008466A8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		849163882C57ACEE008466A8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				849163892C57ACEE008466A8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8491638C2C57ACEE008466A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8491638D2C57ACEE008466A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8491638F2C57ACEE008466A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89B72AEB680A384C0F5A7A93 /* Pods-bassWinTrophy.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = bassWinTrophy/bassWinTrophy.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = bassWinTrophy/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bassWinTrophy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		849163902C57ACEE008466A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBF583B151CECE934F4DAD36 /* Pods-bassWinTrophy.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = bassWinTrophy/bassWinTrophy.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = bassWinTrophy/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bassWinTrophy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		849163752C57ACEB008466A8 /* Build configuration list for PBXProject "bassWinTrophy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8491638C2C57ACEE008466A8 /* Debug */,
+				8491638D2C57ACEE008466A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8491638E2C57ACEE008466A8 /* Build configuration list for PBXNativeTarget "bassWinTrophy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8491638F2C57ACEE008466A8 /* Debug */,
+				849163902C57ACEE008466A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 849163722C57ACEB008466A8 /* Project object */;
+}

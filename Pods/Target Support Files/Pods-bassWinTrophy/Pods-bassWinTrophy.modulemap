@@ -1,0 +1,6 @@
+framework module Pods_bassWinTrophy {
+  umbrella header "Pods-bassWinTrophy-umbrella.h"
+
+  export *
+  module * { export * }
+}
