@@ -38,8 +38,8 @@
 		849163C62C57AE2A008466A8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849163C52C57AE2A008466A8 /* SettingsView.swift */; };
 		849163C92C57AFD1008466A8 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 849163C82C57AFD1008466A8 /* PrivacyInfo.xcprivacy */; };
 		849163CB2C57B126008466A8 /* bubbles.json in Resources */ = {isa = PBXBuildFile; fileRef = 849163CA2C57B126008466A8 /* bubbles.json */; };
-		849163CD2C57B12B008466A8 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 849163CC2C57B12B008466A8 /* loading.json */; };
 		849163CF2C57B132008466A8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 849163CE2C57B132008466A8 /* GoogleService-Info.plist */; };
+		849163D12C57DF7C008466A8 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 849163D02C57DF7C008466A8 /* loading.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,8 +76,8 @@
 		849163C72C57AFBF008466A8 /* bassWinTrophy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = bassWinTrophy.entitlements; sourceTree = "<group>"; };
 		849163C82C57AFD1008466A8 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		849163CA2C57B126008466A8 /* bubbles.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bubbles.json; sourceTree = "<group>"; };
-		849163CC2C57B12B008466A8 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		849163CE2C57B132008466A8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		849163D02C57DF7C008466A8 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		89B72AEB680A384C0F5A7A93 /* Pods-bassWinTrophy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bassWinTrophy.debug.xcconfig"; path = "Target Support Files/Pods-bassWinTrophy/Pods-bassWinTrophy.debug.xcconfig"; sourceTree = "<group>"; };
 		C809AD37BADFE4A6EB75591C /* Pods_bassWinTrophy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bassWinTrophy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBF583B151CECE934F4DAD36 /* Pods-bassWinTrophy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bassWinTrophy.release.xcconfig"; path = "Target Support Files/Pods-bassWinTrophy/Pods-bassWinTrophy.release.xcconfig"; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 			children = (
 				849163CE2C57B132008466A8 /* GoogleService-Info.plist */,
 				849163C82C57AFD1008466A8 /* PrivacyInfo.xcprivacy */,
-				849163CC2C57B12B008466A8 /* loading.json */,
+				849163D02C57DF7C008466A8 /* loading.json */,
 				849163CA2C57B126008466A8 /* bubbles.json */,
 				8491637C2C57ACEB008466A8 /* bassWinTrophy */,
 				8491637B2C57ACEB008466A8 /* Products */,
@@ -314,9 +314,9 @@
 			files = (
 				8491638A2C57ACEE008466A8 /* LaunchScreen.storyboard in Resources */,
 				849163872C57ACEE008466A8 /* Assets.xcassets in Resources */,
-				849163CD2C57B12B008466A8 /* loading.json in Resources */,
 				849163C92C57AFD1008466A8 /* PrivacyInfo.xcprivacy in Resources */,
 				849163CB2C57B126008466A8 /* bubbles.json in Resources */,
+				849163D12C57DF7C008466A8 /* loading.json in Resources */,
 				849163852C57ACEC008466A8 /* Main.storyboard in Resources */,
 				849163CF2C57B132008466A8 /* GoogleService-Info.plist in Resources */,
 			);
@@ -579,7 +579,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bassWinTrophy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -615,7 +615,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bassWinTrophy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

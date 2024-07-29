@@ -24,7 +24,7 @@
                                 <color key="backgroundColor" name="bgFill"/>
                                 <color key="tintColor" name="bgFill"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bgBlur" translatesAutoresizingMaskIntoConstraints="NO" id="omI-Gg-Agk">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.34999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bgBlur" translatesAutoresizingMaskIntoConstraints="NO" id="omI-Gg-Agk">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
