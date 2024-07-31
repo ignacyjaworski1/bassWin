@@ -42,6 +42,8 @@ struct TrophyView: View {
 
                     if StorageManager.shared.prizes.isEmpty {
                         
+                        Spacer()
+                        
                         VStack(spacing: 60) {
                             Text("Whoops, no Angler's Prizes yet")
                                 .font(.system(size: 25))

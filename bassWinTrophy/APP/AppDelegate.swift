@@ -1,5 +1,3 @@
-
-
 import UIKit
 import AppTrackingTransparency
 import AppsFlyerLib
@@ -7,6 +5,7 @@ import AdSupport
 import FBSDKCoreKit
 import FirebaseCore
 import FirebaseAnalytics
+import FirebaseMessaging
 import UserNotifications
 import UserNotificationsUI
 
@@ -50,11 +49,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var applicationLocalized: String = ""
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        self.createFacebook()
+        self.createGoogleFirebase()
+        Messaging.messaging().delegate = self
+
         geographicalNameTimeZone = timeZoneCurrent()
         abbreviationTimeZone = timeZoneAbbreviationLocal
         applicationLocalized = codeLanguageLocalized ?? ""
+        
         pushNotificationJoo.notificationCenter.delegate = pushNotificationJoo
         pushNotificationJoo.requestAutorization()
+        
         AppsFlyerLib.shared().appsFlyerDevKey = "fAABdEPRuE6pA9f5kMxFK7"
         AppsFlyerLib.shared().appleAppID = "6575376941"
         AppsFlyerLib.shared().deepLinkDelegate = self
@@ -62,12 +67,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         uniqueIdentifierAppsFlyer = AppsFlyerLib.shared().getAppsFlyerUID()
 
         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
-
-        self.createFacebook()
-        self.createGoogleFirebase()
+        
 
         return true
     }
+    
     func createFacebook() {
         AppLinkUtility.fetchDeferredAppLink { (url, error) in
             if let error = error {
@@ -79,9 +83,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+    
     func createGoogleFirebase() {
         FirebaseApp.configure()
     }
+    
     func applicationDidBecomeActive(_ application: UIApplication) {
         if #available(iOS 14, *) {
             AppsFlyerLib.shared().waitForATTUserAuthorization(timeoutInterval: 60)
@@ -113,12 +119,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         AppsFlyerLib.shared().start()
     }
+    
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
         AppsFlyerLib.shared().continue(userActivity, restorationHandler: nil)
-
         return true
-
     }
+    
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         ApplicationDelegate.shared.application(app, open: url, sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
                                                annotation: options[UIApplication.OpenURLOptionsKey.annotation]
@@ -126,30 +132,111 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AppsFlyerLib.shared().handleOpen(url, options: options)
         return true
     }
+    
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         AppsFlyerLib.shared().handlePushNotification(userInfo)
     }
+    
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         let tokenParts = deviceToken.map { data -> String in
             return String(format: "%02.2hhx", data)
         }
         let token = tokenParts.joined()
         tokenPushNotification = token
+
+        // Настройка пуш-уведомлений для Firebase
+        Messaging.messaging().apnsToken = deviceToken
+        subscribeToPushNotifications(fcmToken: tokenPushNotification, playerUUID: nil) // Заменить на playerUUID, если он доступен
     }
+    
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("Failed to register for remote notifications with error: \(error)")
     }
+    
     func applicationWillTerminate(_ application: UIApplication) {
         DispatchQueue.main.async {
             (self.window!.rootViewController as? Helper)?.jooLast()
         }
     }
+    
     func applicationDidEnterBackground(_ application: UIApplication) {
         DispatchQueue.main.async {
             (self.window!.rootViewController as? Helper)?.jooLast()
         }
     }
+
+    // Запрос на получение ссылки на авторизацию
+    func requestAuthorizationLink(brand_id: String, deviceUUID: String) {
+        let url = URL(string: "https://thiscrm.co/api/app/domain/100")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let parameters: [String: Any] = ["deviceUUID": deviceUUID]
+        request.httpBody = try? JSONSerialization.data(withJSONObject: parameters)
+
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let data = data {
+                let json = try? JSONSerialization.jsonObject(with: data, options: [])
+                print("JSON DATA REQ: \(json)")
+                // Откройте ссылку для авторизации пользователя
+            }
+        }
+        task.resume()
+    }
+    
+    // Подписка на пуш-уведомления
+    func subscribeToPushNotifications(fcmToken: String, playerUUID: String?) {
+        let brand_id = "100"
+        let lang = Locale.current.languageCode ?? "en"
+        let partnerCode = "pa2MxHFRmOXBzWc1"
+        
+        var url: URL!
+        if let playerUUID = playerUUID {
+            url = URL(string: "https://thiscrm.co/api/app/push/\(brand_id)/\(fcmToken)/\(playerUUID)/\(partnerCode)")!
+        } else {
+            url = URL(string: "https://thiscrm.co/api/app/push/\(brand_id)/\(fcmToken)/\(lang)/\(partnerCode)")!
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let data = data {
+                let json = try? JSONSerialization.jsonObject(with: data, options: [])
+                
+                print("JSON DATA SUB: \(json)")
+            }
+        }
+        task.resume()
+    }
+    
+    // Трекинг переходов по пушам
+    func trackPushClick(brand_id: String, playerUUID: String?, campaignUUID: String) {
+        let url = URL(string: "https://thiscrm.co/api/app/domain/100")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        var parameters: [String: Any] = ["campaignUUID": campaignUUID]
+        if let playerUUID = playerUUID {
+            parameters["playerUUID"] = playerUUID
+        } else {
+            parameters["deviceUUID"] = UIDevice.current.identifierForVendor?.uuidString
+        }
+        
+        request.httpBody = try? JSONSerialization.data(withJSONObject: parameters)
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let data = data {
+                let json = try? JSONSerialization.jsonObject(with: data, options: [])
+                print("JSON DATA TRACK: \(json)")
+            }
+        }
+        task.resume()
+    }
 }
-extension AppDelegate: AppsFlyerLibDelegate{
+
+extension AppDelegate: AppsFlyerLibDelegate {
     func onConversionDataSuccess(_ installData: [AnyHashable: Any]) {
         oldAndNotWorkingNames = installData as! [String : Any]
         for (key, value) in installData {
@@ -172,20 +259,24 @@ extension AppDelegate: AppsFlyerLibDelegate{
             }
         }
     }
+    
     func onConversionDataFail(_ error: Error) {
         print(error)
     }
+    
     func onAppOpenAttribution(_ attributionData: [AnyHashable : Any]) {
         self.dataAttribution = attributionData as! [String : Any]
         print("onAppOpenAttribution data:")
         for (key, value) in attributionData {
-            print(key, ":",value)
+            print(key, ":", value)
         }
     }
+    
     func onAppOpenAttributionFailure(_ error: Error) {
         print(error)
     }
 }
+
 extension AppDelegate: DeepLinkDelegate {
     func didResolveDeepLink(_ result: DeepLinkResult) {
         switch result.status {
@@ -234,48 +325,55 @@ extension AppDelegate: DeepLinkDelegate {
         }
     }
 }
-class JooPush : NSObject, UNUserNotificationCenterDelegate {
 
+extension AppDelegate: MessagingDelegate {
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        if let fcmToken = fcmToken {
+            print("Firebase registration token: \(fcmToken)")
+            // Update FCM token if needed
+            tokenPushNotification = fcmToken
+            subscribeToPushNotifications(fcmToken: fcmToken, playerUUID: nil) // Замени на playerUUID, если он доступен
+        }
+    }
+}
+
+class JooPush: NSObject, UNUserNotificationCenterDelegate {
     let notificationCenter = UNUserNotificationCenter.current()
+    
     func requestAutorization() {
         notificationCenter.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
-           
-
             guard granted else { return }
             self.getNotificationSettings()
         }
     }
+    
     func getNotificationSettings() {
         notificationCenter.getNotificationSettings { (settings) in
-            
             guard settings.authorizationStatus == .authorized else { return }
-
+            
             DispatchQueue.main.async {
                 UIApplication.shared.registerForRemoteNotifications()
             }
         }
     }
-    func userNotificationCenter(
-            _ center: UNUserNotificationCenter,
-            willPresent notification: UNNotification,
-            withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-                if #available(iOS 14.0, *) {
-                    let description = notification.request.content.categoryIdentifier.description
-                    if description == "purchase" {
-                        AppEvents.shared.logEvent(AppEvents.Name.purchased, parameters: [AppEvents.ParameterName.description:description])
-                        print("\n Recived Purchase: \(description) \n")
-                    } else if description == "registration" {
-                        AppEvents.shared.logEvent(AppEvents.Name.completedRegistration , parameters: [AppEvents.ParameterName.description:description])
-                        print("\n Recived Registartion: \(description) \n")
-                    } else if description == "contact" {
-                        AppEvents.shared.logEvent(AppEvents.Name.contact , parameters: [AppEvents.ParameterName.description:description])
-                        print("\n Recived Registartion: \(description) \n")
-                    }
-                    
-                    completionHandler([.banner, .sound, .badge, .list])
-                } else {
-                    completionHandler([.alert, .sound])
-                }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        if #available(iOS 14.0, *) {
+            let description = notification.request.content.categoryIdentifier.description
+            if description == "purchase" {
+                AppEvents.shared.logEvent(AppEvents.Name.purchased, parameters: [AppEvents.ParameterName.description: description])
+                print("\nReceived Purchase: \(description)\n")
+            } else if description == "registration" {
+                AppEvents.shared.logEvent(AppEvents.Name.completedRegistration, parameters: [AppEvents.ParameterName.description: description])
+                print("\nReceived Registration: \(description)\n")
+            } else if description == "contact" {
+                AppEvents.shared.logEvent(AppEvents.Name.contact, parameters: [AppEvents.ParameterName.description: description])
+                print("\nReceived Contact: \(description)\n")
             }
+            
+            completionHandler([.banner, .sound, .badge, .list])
+        } else {
+            completionHandler([.alert, .sound])
+        }
+    }
 }
-

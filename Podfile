@@ -10,6 +10,8 @@ target 'bassWinTrophy' do
    pod 'lottie-ios'
    pod 'FirebaseAnalytics'  
    pod 'RealmSwift'
+pod 'FirebaseCore'
+pod 'FirebaseMessaging'
 
   # Pods for bassWinTrophy
 

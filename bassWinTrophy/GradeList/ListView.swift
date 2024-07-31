@@ -22,7 +22,7 @@ struct ListView: View {
                 
                 if grades.isEmpty {
                     VStack(spacing: 60) {
-                        Text("Oops, it looks like you don't have any Custom Grade Lists yet.")
+                        Text("Oops, it looks like you don't have any Grade Lists yet.")
                             .font(.system(size: 25))
                         
                         Image(systemName: "plus.square")
